@@ -45,7 +45,7 @@ async function fileExists(filePath) {
 
 async function compileCss() {
   const stylesDir = path.join(__dirname, 'styles');
-  const bundlePath = path.join(__dirname, 'project-dist', 'bundle.css');
+  const bundlePath = path.join(__dirname, 'project-dist', 'style.css');
 
   try {
     const files = await fs.readdir(stylesDir, { withFileTypes: true });
@@ -60,7 +60,7 @@ async function compileCss() {
     }
 
     await fs.writeFile(bundlePath, stylesContent);
-    console.log('Styles merged into bundle.css successfully!');
+    console.log('Styles merged into style.css successfully!');
   } catch (error) {
     console.error('Error:', error.message);
   }
